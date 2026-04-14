@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENTA CODA - Edukasi Tutur Kata</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <img src="background-genta.jpg.jpeg" alt="Logo Genta Coda" class="main-logo">
+        <h1>GENTA CODA</h1>
+        <p>Gerakan Edukasi Narasi dan Tutur Anak CODA</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>📺 Video & Pesan Suara Hari Ini</h2>
+            <div class="video-wrapper">
+                <video id="mainVideo" controls>
+                    <source src="video-edukasi.mp4" type="video/manual">
+                    Browser kamu tidak mendukung video.
+                </video>
+            </div>
+            <div class="voice-note-area">
+                <button class="btn-audio" onclick="playVoice()">🔊 Dengarkan Pesan Genta</button>
+            </div>
+        </section>
+
+        <section class="card game-section">
+            <h2>🎮 Ayo Bicara dengan Genta!</h2>
+            <div id="game-container">
+                <div class="bubble-chat">
+                    <p id="genta-talk">"Halo Sahabat Coda! Namaku Genta. Kalau kita diberi hadiah, kita bilang apa ya?"</p>
+                </div>
+                
+                <div class="interaction-area">
+                    <div id="options" class="options-grid">
+                        <button class="btn-opt" onclick="respond('Terima Kasih')">Terima Kasih</button>
+                        <button class="btn-opt" onclick="respond('Sama-sama')">Sama-sama</button>
+                        <button class="btn-opt" onclick="respond('Minta Tolong')">Minta Tolong</button>
+                        <button class="btn-opt" onclick="respond('Maaf ya')">Maaf ya</button>
+                        <button class="btn-opt" onclick="respond('Permisi')">Permisi</button>
+                        <button class="btn-opt" onclick="respond('Halo/Salam')">Halo / Salam</button>
+                    </div>
+                </div>
+                <div id="feedback" class="feedback"></div>
+            </div>
+            
+            <div class="progress-container">
+                <p>Kata yang dikuasai hari ini:</p>
+                <div class="progress-bar"><div id="progress" style="width: 0%"></div></div>
+                <p id="counter">0 / 10 Kata</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let count = 0;
+        const totalWords = 10;
+
+        function respond(word) {
+            const talk = document.getElementById('genta-talk');
+            const feedback = document.getElementById('feedback');
+            const progress = document.getElementById('progress');
+            
+            // Simulasi interaksi sederhana
+            talk.innerText = "Wah, hebat! Kamu mengucapkan '" + word + "' dengan sangat baik!";
+            feedback.innerText = "✨ Bagus! +1 Bintang Kesantunan";
+            
+            if(count < totalWords) {
+                count++;
+                let percentage = (count / totalWords) * 100;
+                progress.style.width = percentage + "%";
+                document.getElementById('counter').innerText = count + " / " + totalWords + " Kata";
+            }
+
+            // Reset pesan setelah 3 detik untuk kata berikutnya
+            setTimeout(() => {
+                talk.innerText = "Coba kata yang lain yuk! Bagaimana kalau kita berbuat salah?";
+                feedback.innerText = "";
+            }, 3000);
+        }
+
+        function playVoice() {
+            // Ganti dengan file audio voice note asli
+            alert("Memutar Voice Note: 'Halo anak hebat, mari bicara sopan hari ini!'");
+        }
+    </script>
+</body>
+</html>

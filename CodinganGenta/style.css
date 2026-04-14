@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    /* Background menggunakan gambar yang kamu unggah */
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                url('background-genta.jpg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.main-logo {
+    width: 180px; /* Ukuran logo */
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid #3498db;
+    background: white;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.8rem;
+    color: #2980b9;
+    text-shadow: 2px 2px white;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 25px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border: 2px solid #e1f5fe;
+}
+
+h2 {
+    font-family: 'Fredoka One', cursive;
+    color: #e67e22;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Video & Audio */
+.video-wrapper video {
+    width: 100%;
+    border-radius: 20px;
+    border: 5px solid #f1c40f;
+}
+
+.voice-note-area {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.btn-audio {
+    padding: 10px 25px;
+    background: #9b59b6;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Game Area */
+.bubble-chat {
+    background: #ecf0f1;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-left: 8px solid #3498db;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.btn-opt {
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    background: #3498db;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 4px 0 #2980b9;
+}
+
+.btn-opt:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+.btn-opt:nth-child(even) { background: #27ae60; box-shadow: 0 4px 0 #219150; }
+.btn-opt:nth-child(3n) { background: #e67e22; box-shadow: 0 4px 0 #d35400; }
+
+/* Progress Bar */
+.progress-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    background: #dfe6e9;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+#progress {
+    height: 100%;
+    background: #f1c40f;
+    transition: 0.5s;
+}
+
+.feedback {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #27ae60;
+    height: 20px;
+}
