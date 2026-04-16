@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENTA CODA - Media Edukasi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <img src="background-genta.jpg.jpeg" alt="Logo Genta" class="main-logo">
+        <h1>GENTA CODA</h1>
+        <p>Gerakan Edukasi Narasi dan Tutur Anak</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2 class="section-title">📺 Video Hari Ini</h2>
+            <div class="video-wrapper">
+                <video id="mainVideo" controls>
+                    <source src="video-edukasi.mp4" type="video/mp4">
+                    Browser tidak mendukung video.
+                </video>
+            </div>
+            <div class="voice-area">
+                <button class="btn-audio" onclick="playSound('sound-click'); alert('Halo Sahabat Genta!')">
+                    🔊 Pesan Suara Genta
+                </button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 class="section-title">🎮 Main & Belajar</h2>
+            <div class="game-stats">
+                <span>Skor: <span id="score">0</span></span>
+                <span>Level: <span id="level">1</span></span>
+            </div>
+
+            <div class="game-box">
+                <p>Apa arti kata ini?</p>
+                <h2 id="word-target">...</h2>
+            </div>
+
+            <div id="options-grid" class="options-grid">
+                </div>
+        </section>
+    </main>
+
+    <audio id="sound-correct" src="https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3"></audio>
+    <audio id="sound-wrong" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"></audio>
+    <audio id="sound-click" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
